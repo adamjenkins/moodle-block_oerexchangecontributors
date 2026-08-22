@@ -25,9 +25,12 @@
 defined('MOODLE_INTERNAL') || die();
 
 $string['config_count'] = 'Contributors to show';
+$string['config_layout'] = 'View';
 $string['config_sort'] = 'Sort on load';
 $string['defaultcount'] = 'Contributors to show';
 $string['defaultcount_desc'] = 'How many contributor cards a block shows by default. Each block instance can override this on its own configuration form.';
+$string['defaultlayout'] = 'View';
+$string['defaultlayout_desc'] = 'Whether contributors appear as cards or as a compact list before the viewer changes it. Each block instance can override this on its own configuration form.';
 $string['defaultsort'] = 'Sort on load';
 $string['defaultsort_desc'] = 'The order contributors appear in before the viewer changes it. Each block instance can override this on its own configuration form.';
 $string['oerexchangecontributors:addinstance'] = 'Add a new OER Exchange: contributors block';

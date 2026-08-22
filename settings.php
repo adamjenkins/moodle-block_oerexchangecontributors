@@ -43,6 +43,19 @@ if ($ADMIN->fulltree) {
         $sortoptions[$key] = get_string('contributors_sort_' . $key, 'local_oerexchange');
     }
 
+    $viewoptions = [];
+    foreach (\local_oerexchange\local\contributor_list::layout_keys() as $key) {
+        $viewoptions[$key] = get_string('contributors_view_' . $key, 'local_oerexchange');
+    }
+
+    $settings->add(new admin_setting_configselect(
+        'block_oerexchangecontributors/defaultlayout',
+        get_string('defaultlayout', 'block_oerexchangecontributors'),
+        get_string('defaultlayout_desc', 'block_oerexchangecontributors'),
+        \local_oerexchange\local\contributor_list::LAYOUT_CARDS,
+        $viewoptions
+    ));
+
     $settings->add(new admin_setting_configselect(
         'block_oerexchangecontributors/defaultsort',
         get_string('defaultsort', 'block_oerexchangecontributors'),

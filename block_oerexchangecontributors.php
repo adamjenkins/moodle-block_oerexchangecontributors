@@ -102,18 +102,26 @@ class block_oerexchangecontributors extends block_base {
             )
         );
 
+        $layout = contributor_list::normalise_layout(
+            optional_param(
+                contributor_list::PARAM_LAYOUT,
+                content_builder::resolve_layout($config),
+                PARAM_ALPHA
+            )
+        );
+
         $regionid = 'oerexchange-contributors-block-' . (int) $this->instance->id;
         $cards = contributor_list::get_cards($sort, $count, 0);
 
         $this->page->requires->js_call_amd('local_oerexchange/contributorsort', 'init', [
             $regionid,
             $count,
-            'list',
+            $layout,
         ]);
 
-        $this->content->text = contributor_list::render_sort_form($this->page->url, $sort, $regionid)
+        $this->content->text = contributor_list::render_sort_form($this->page->url, $sort, $regionid, $layout)
             . html_writer::div(
-                contributor_list::render_list($cards),
+                contributor_list::render($cards, $layout),
                 '',
                 ['id' => $regionid, 'data-region' => 'oerexchange-contributors']
             );

@@ -25,9 +25,12 @@
 defined('MOODLE_INTERNAL') || die();
 
 $string['config_count'] = '表示する貢献者数';
+$string['config_layout'] = '表示形式';
 $string['config_sort'] = '初期表示の並び順';
 $string['defaultcount'] = '表示する貢献者数';
 $string['defaultcount_desc'] = 'ブロックにデフォルトで表示する貢献者カードの数です。ブロックインスタンスごとに設定画面で上書きできます。';
+$string['defaultlayout'] = '表示形式';
+$string['defaultlayout_desc'] = '閲覧者が変更するまで、貢献者をカードで表示するかコンパクトなリストで表示するかを指定します。ブロックインスタンスごとに設定画面で上書きできます。';
 $string['defaultsort'] = '初期表示の並び順';
 $string['defaultsort_desc'] = '閲覧者が変更するまでの貢献者の並び順です。ブロックインスタンスごとに設定画面で上書きできます。';
 $string['oerexchangecontributors:addinstance'] = 'OER エクスチェンジ:貢献者ブロックを追加する';

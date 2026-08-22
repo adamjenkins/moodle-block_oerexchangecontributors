@@ -47,6 +47,18 @@ class block_oerexchangecontributors_edit_form extends block_edit_form {
         );
         $mform->setDefault('config_count', '');
 
+        $views = ['' => get_string('usesitedefault', 'block_oerexchangecontributors')];
+        foreach (contributor_list::layout_keys() as $key) {
+            $views[$key] = get_string('contributors_view_' . $key, 'local_oerexchange');
+        }
+        $mform->addElement(
+            'select',
+            'config_layout',
+            get_string('config_layout', 'block_oerexchangecontributors'),
+            $views
+        );
+        $mform->setDefault('config_layout', '');
+
         $sorts = ['' => get_string('usesitedefault', 'block_oerexchangecontributors')];
         foreach (contributor_list::sort_keys() as $key) {
             $sorts[$key] = get_string('contributors_sort_' . $key, 'local_oerexchange');

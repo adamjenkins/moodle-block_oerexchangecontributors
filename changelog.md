@@ -18,6 +18,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Sort control offering most resources shared, most courses shared and
   recently shared; re-sorts in place over AJAX and degrades to a plain form
   when JavaScript is unavailable.
-- Site-wide settings for the number of cards and the initial sort, each
-  overridable per block instance.
+- View control switching between cards and a compact list, so the same block
+  suits both a narrow Dashboard column and a wide region.
+- Site-wide settings for the number of cards, the view, and the initial sort,
+  each overridable per block instance.
 - Footer link to the full contributor listing.

@@ -25,7 +25,7 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->component = 'block_oerexchangecontributors';
-$plugin->version   = 2026082200;
+$plugin->version   = 2026082201;
 // 2025041400 = the Moodle 5.0 branching version — matches $supported's floor
 // (and composer.json's ">=5.0 <5.3").
 $plugin->requires  = 2025041400;

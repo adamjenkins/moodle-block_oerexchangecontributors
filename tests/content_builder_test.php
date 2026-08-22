@@ -97,4 +97,35 @@ final class content_builder_test extends \advanced_testcase {
         $this->assertSame(6, content_builder::resolve_count(null, 6));
         $this->assertSame(contributor_list::SORT_RESOURCES, content_builder::resolve_sort(null));
     }
+
+    public function test_layout_defaults_to_cards(): void {
+        $this->resetAfterTest();
+
+        $this->assertSame(contributor_list::LAYOUT_CARDS, content_builder::resolve_layout(null));
+    }
+
+    public function test_layout_site_default_then_instance_override(): void {
+        $this->resetAfterTest();
+        set_config('defaultlayout', contributor_list::LAYOUT_LIST, 'block_oerexchangecontributors');
+
+        $this->assertSame(contributor_list::LAYOUT_LIST, content_builder::resolve_layout(null));
+        $this->assertSame(
+            contributor_list::LAYOUT_CARDS,
+            content_builder::resolve_layout((object) ['layout' => contributor_list::LAYOUT_CARDS])
+        );
+        $this->assertSame(
+            contributor_list::LAYOUT_LIST,
+            content_builder::resolve_layout((object) ['layout' => '']),
+            'an empty instance value means "use the site default"'
+        );
+    }
+
+    public function test_bad_layout_is_normalised(): void {
+        $this->resetAfterTest();
+
+        $this->assertSame(
+            contributor_list::LAYOUT_CARDS,
+            content_builder::resolve_layout((object) ['layout' => 'nonsense'])
+        );
+    }
 }

@@ -54,6 +54,23 @@ class content_builder {
     }
 
     /**
+     * Which view this instance should open with.
+     *
+     * @param \stdClass|null $config the block instance config, or null when unconfigured
+     * @return string one of contributor_list's LAYOUT_* constants
+     */
+    public static function resolve_layout(?\stdClass $config): string {
+        $value = $config->layout ?? '';
+
+        if ($value === '' || $value === null) {
+            $sitevalue = get_config('block_oerexchangecontributors', 'defaultlayout');
+            $value = $sitevalue === false ? contributor_list::LAYOUT_CARDS : $sitevalue;
+        }
+
+        return contributor_list::normalise_layout((string) $value);
+    }
+
+    /**
      * Which sort this instance should open with.
      *
      * @param \stdClass|null $config the block instance config, or null when unconfigured

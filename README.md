@@ -16,9 +16,11 @@ One card per contributor:
 
 The whole card is clickable and opens that contributor's public profile.
 
-A sort control at the top offers **Most resources shared**, **Most courses
-shared** and **Recently shared**. It re-sorts the list in place; with
-JavaScript turned off the same control still works as an ordinary form that
+Two controls sit at the top. **Sort by** offers *Most resources shared*,
+*Most courses shared* and *Recently shared*. **View as** switches between
+**Cards** (picture-led, in a responsive grid) and **List** (a compact
+one-per-row layout that suits a narrow block region). Both re-render the list
+in place; with JavaScript turned off they still work as an ordinary form that
 reloads the page. A footer link opens the full listing of every contributor at
 `/local_oerexchange/contributors`.
 
@@ -42,10 +44,11 @@ contributors*:
 | Setting | Default | Meaning |
 |---|---|---|
 | Contributors to show | 6 | How many cards a block shows |
+| View | Cards | Cards or compact list, before the viewer changes it |
 | Sort on load | Most resources shared | The order before the viewer changes it |
 
-Every block instance can override both on its own configuration form, or leave
-them set to *Use the site default*.
+Every block instance can override all three on its own configuration form, or
+leave them set to *Use the site default*.
 
 ## Where it can go
 
