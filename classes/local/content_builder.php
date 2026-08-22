@@ -44,7 +44,7 @@ class content_builder {
 
         if ($value === '' || $value === null) {
             $sitevalue = get_config('block_oerexchangecontributors', 'defaultcount');
-            // get_config() returns false, not the declared default, when the
+            // Config reads return false, not the declared default, when the
             // settings page has never been saved — fall back explicitly rather
             // than letting (int) false collapse the count to zero.
             $value = $sitevalue === false ? $shippeddefault : $sitevalue;

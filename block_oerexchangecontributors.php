@@ -78,8 +78,6 @@ class block_oerexchangecontributors extends block_base {
      * @return stdClass
      */
     public function get_content() {
-        global $PAGE;
-
         if ($this->content !== null) {
             return $this->content;
         }
@@ -107,13 +105,13 @@ class block_oerexchangecontributors extends block_base {
         $regionid = 'oerexchange-contributors-block-' . (int) $this->instance->id;
         $cards = contributor_list::get_cards($sort, $count, 0);
 
-        $PAGE->requires->js_call_amd('local_oerexchange/contributorsort', 'init', [
+        $this->page->requires->js_call_amd('local_oerexchange/contributorsort', 'init', [
             $regionid,
             $count,
             'list',
         ]);
 
-        $this->content->text = contributor_list::render_sort_form($PAGE->url, $sort, $regionid)
+        $this->content->text = contributor_list::render_sort_form($this->page->url, $sort, $regionid)
             . html_writer::div(
                 contributor_list::render_list($cards),
                 '',

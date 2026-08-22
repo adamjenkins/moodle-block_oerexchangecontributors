@@ -61,8 +61,8 @@ final class content_builder_test extends \advanced_testcase {
         set_config('defaultcount', 9, 'block_oerexchangecontributors');
         set_config('defaultsort', contributor_list::SORT_RECENT, 'block_oerexchangecontributors');
 
-        // "Use the site default" submits an empty string, which must not be
-        // read as "zero cards" or "unknown sort".
+        // Choosing "use the site default" submits an empty string, which
+        // must not be read as "zero cards" or "unknown sort".
         $config = (object) ['count' => '', 'sort' => ''];
 
         $this->assertSame(9, content_builder::resolve_count($config, 6));
@@ -92,7 +92,7 @@ final class content_builder_test extends \advanced_testcase {
 
     public function test_unsaved_site_settings_do_not_collapse_the_count(): void {
         $this->resetAfterTest();
-        // get_config() returns false when the settings page was never saved.
+        // Config reads return false when the settings page was never saved.
         // Reading that as an int would show zero cards.
         $this->assertSame(6, content_builder::resolve_count(null, 6));
         $this->assertSame(contributor_list::SORT_RESOURCES, content_builder::resolve_sort(null));
