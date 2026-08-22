@@ -1,0 +1,23 @@
+# Changelog
+
+All notable changes to this project are documented in this file.
+
+The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/),
+and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
+
+## [1.0.0] - 2026-08-22
+
+### Added
+
+- Dashboard and front-page block listing OER Exchange contributors as cards:
+  profile picture, name, badges, up to three expertise tags, resource and
+  course counts, and time since the last share.
+- Whole-card link to the contributor's public profile, implemented with a
+  single stretched anchor so assistive technology announces the contributor's
+  name rather than the card's entire contents.
+- Sort control offering most resources shared, most courses shared and
+  recently shared; re-sorts in place over AJAX and degrades to a plain form
+  when JavaScript is unavailable.
+- Site-wide settings for the number of cards and the initial sort, each
+  overridable per block instance.
+- Footer link to the full contributor listing.

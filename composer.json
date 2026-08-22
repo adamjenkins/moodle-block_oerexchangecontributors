@@ -1,0 +1,21 @@
+{
+    "name": "adamjenkins/moodle-block_oerexchangecontributors",
+    "description": "Dashboard block listing the OER Exchange's contributors as cards, sorted by contribution, each linking to that contributor's profile.",
+    "type": "moodle-block",
+    "license": "GPL-3.0-or-later",
+    "authors": [
+        {
+            "name": "Adam Jenkins",
+            "email": "adam@wisecat.net"
+        }
+    ],
+    "support": {
+        "issues": "https://github.com/adamjenkins/moodle-block_oerexchangecontributors/issues",
+        "source": "https://github.com/adamjenkins/moodle-block_oerexchangecontributors"
+    },
+    "require": {
+        "moodle/moodle": ">=5.0 <5.3",
+        "moodle/composer-installer": "^1.0",
+        "adamjenkins/moodle-local_oerexchange": "*"
+    }
+}

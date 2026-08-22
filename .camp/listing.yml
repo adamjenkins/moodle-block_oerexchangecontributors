@@ -1,0 +1,34 @@
+# camp listing manifest — descriptive content for your plugin's page.
+# Edit freely and commit; camp ingests this file at each tagged release.
+# Schema: https://camp-registry.org/schema/listing.schema.json
+name: "OER Exchange: contributors"
+summary: "A Moodle Dashboard block for the OER Exchange platform, showing the people who publish to the Exchange as cards, ordered by what they have contributed."
+description: |
+  Answers "who is sharing here, and what do they share" at a glance, and gives
+  the people doing the sharing some visible credit for it.
+
+  - One card per contributor: their profile picture, name, any badges they hold,
+    up to three expertise tags, how many resources and courses they have
+    shared, and how recently. The whole card links to their profile.
+  - A sort control offers most resources shared, most courses shared, or
+    recently shared. It re-sorts in place, and still works with JavaScript
+    turned off.
+  - Co-authors count as contributors: a co-author holds the same rights over a
+    resource as its creator, so they earn the same recognition.
+  - Only people with something currently in the catalogue are listed, and only
+    those who have left their profile publicly visible.
+  - Configurable site-wide and per block instance: how many cards to show, and
+    which order to open in.
+  - A footer link opens the full listing of every contributor.
+
+  A read-only presentation layer: all data comes from the companion
+  `local_oerexchange` plugin, which this block depends on and cannot be
+  installed without.
+labels:
+  - fully-free
+links:
+  docs: https://github.com/adamjenkins/moodle-block_oerexchangecontributors#readme
+  issues: https://github.com/adamjenkins/moodle-block_oerexchangecontributors/issues
+# screenshots:
+#   - path: .camp/screenshots/overview.png
+#     caption: Main view
