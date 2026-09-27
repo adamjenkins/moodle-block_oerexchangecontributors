@@ -59,7 +59,7 @@ on such a site this block reaches logged-in visitors only.
 
 ## Requirements
 
-- Moodle 5.0–5.2, PHP 8.2–8.4.
+- Moodle 5.0–5.3, PHP 8.2–8.4.
 - `local_oerexchange` 2026082200 or later. The block renders that plugin's
   `contributor_list` class and cannot work without it; the installer enforces
   the dependency.
