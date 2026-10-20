@@ -29,6 +29,8 @@ labels:
 links:
   docs: https://github.com/adamjenkins/moodle-block_oerexchangecontributors#readme
   issues: https://github.com/adamjenkins/moodle-block_oerexchangecontributors/issues
-# screenshots:
-#   - path: .camp/screenshots/overview.png
-#     caption: Main view
+screenshots:
+  - path: .camp/screenshots/01-cards.png
+    caption: "Contributors as cards: badges, expertise, and what they have shared."
+  - path: .camp/screenshots/02-list.png
+    caption: "The compact list view, sorted by most recently shared."
